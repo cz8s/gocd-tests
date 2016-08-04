@@ -55,4 +55,4 @@ pipelines:
                     working_directory: debs
                     command: ls
                     arguments:
-                      - '*.changes'
+                      - '*'
