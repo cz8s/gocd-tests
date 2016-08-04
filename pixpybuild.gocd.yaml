@@ -20,7 +20,7 @@ pipelines:
                     source: pixpybuild*_*.changes
                     destination: debs
                 - build:
-                    source: pixpybuild*_*.tar.xz
+                    source: pixpybuild*_*.tar.gz
                     destination: debs
                 - build:
                     source: pixpybuild*_*.dsc
