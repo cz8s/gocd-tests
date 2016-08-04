@@ -33,3 +33,20 @@ pipelines:
                       - -rfakeroot
                       - -uc
                       - -us
+
+      - lint:
+          jobs:
+            lintian:
+              tasks:
+               - fetch:
+                    pipeline: pixpybuild
+                    stage: build
+                    job: package
+                    is_file: no
+                    source: debs
+                    destination: debs
+               - exec: # indicates type of task
+                    command: /usr/bin/lintian
+                    working_directory: pixpybuild
+                    arguments:
+                      - debs/*.changes
