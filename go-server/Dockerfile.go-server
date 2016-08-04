@@ -1,0 +1,7 @@
+FROM  gocd/gocd-server
+
+COPY cruise-config.xml /etc/go/cruise-config.xml
+ADD https://github.com/tomzo/gocd-yaml-config-plugin/releases/download/0.1.0/yaml-config-plugin-0.1.0.jar /var/lib/go-server/plugins/external/
+RUN chown go:go /var/lib/go-server -R
+VOLUME ["/var/lib/go-server", "/var/log/go-server", "/etc/go", "/go-addons", "/var/go"]
+
