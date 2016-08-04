@@ -53,6 +53,6 @@ pipelines:
                     source: debs
                 - exec:
                     working_directory: debs
-                    command: /usr/bin/lintian
+                    command: ls
                     arguments:
                       - '*.changes'
