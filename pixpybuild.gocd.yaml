@@ -41,6 +41,7 @@ pipelines:
                       - -us
 
       - lint:
+          clean_workspace: true
           jobs:
             lintian:
               tasks:
