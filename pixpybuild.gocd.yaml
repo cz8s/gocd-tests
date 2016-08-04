@@ -7,6 +7,12 @@ pipelines:
         git: https://github.com/pixelated/pixpybuild.git
         destination: pixpybuild
         branch: master
+      ci-config:
+        git: https://github.com/cz8s/gocd-tests.git
+        destination: ci-config
+        branch: master
+        whitelist:
+          - pixpybuild.gocd.yaml
     stages:
       - build:
           clean_workspace: yes
