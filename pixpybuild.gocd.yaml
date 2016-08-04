@@ -55,4 +55,5 @@ pipelines:
                     command: pwd
                - exec: # indicates type of task
                     command: ls
-                       - -la
+                    arguments:
+                      - -la
