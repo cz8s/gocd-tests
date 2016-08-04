@@ -51,9 +51,7 @@ pipelines:
                     job: package
                     is_file: no
                     source: debs
-               - exec: # indicates type of task
-                    command: pwd
-               - exec: # indicates type of task
-                    command: ls
+               - exec:
+                    command: /usr/bin/lintian
                     arguments:
-                      - -la
+                      - debs/*.changes
