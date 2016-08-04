@@ -1,0 +1,35 @@
+# simple.gocd.yaml
+pipelines:
+  pixpybuild:
+    group: packaging
+    materials:
+      pixpybuild:
+        git: https://github.com/pixelated/pixpybuild.git
+        destination: pixpybuild
+        branch: master
+    stages:
+      - build:
+          clean_workspace: yes
+          jobs:
+            package:
+              artifacts:
+                - build:
+                    source: pixpybuild*_*.deb
+                    destination: debs
+                - build:
+                    source: pixpybuild*_*.changes
+                    destination: debs
+                - build:
+                    source: pixpybuild*_*.tar.xz
+                    destination: debs
+                - build:
+                    source: pixpybuild*_*.dsc
+                    destination: debs
+              tasks:
+                - exec:
+                    command: /usr/bin/dpkg-buildpackage
+                    working_directory: pixpybuild
+                    arguments:
+                      - -rfakeroot
+                      - -uc
+                      - -us
