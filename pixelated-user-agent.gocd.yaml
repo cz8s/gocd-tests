@@ -45,11 +45,11 @@ pipelines:
           jobs:
             lintian:
               tasks:
-               - fetch:
+                - fetch:
                     pipeline: pixelated-user-agent
                     stage: build
                     job: package
                     is_file: no
                     source: debs
-               - exec:
-                 command: ./ci-config/bin/lint.sh
+                - exec:
+                    command: ./ci-config/bin/lint.sh
