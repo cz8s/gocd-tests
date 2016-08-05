@@ -52,6 +52,4 @@ pipelines:
                     is_file: no
                     source: debs
                - exec:
-                    command: /usr/bin/lintian
-                    arguments:
-                      - debs/*.changes
+                 command: ./ci-config/bin/lint.sh

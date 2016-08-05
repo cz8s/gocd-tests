@@ -53,6 +53,4 @@ pipelines:
                     source: debs
                 - exec:
                     working_directory: debs
-                    command: ls
-                    arguments:
-                      - '*'
+                    command: ./ci-config/bin/lint.sh
