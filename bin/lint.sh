@@ -1,3 +1,3 @@
 #!/bin/sh
 
-/usr/bin/lintian -X chg,init.d,man debs/*.changes
+/usr/bin/lintian -X chg,chng,init.d,man debs/*.changes
